@@ -7,6 +7,11 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Similar to {@link NoUiField} but holds a generic collection
+ *
+ * @param <T>
+ */
 @SuppressWarnings("serial")
 public class NoUiCollectionField<T> extends NoUiField<Collection<T>> {
 	
