@@ -41,12 +41,6 @@ public class AddonView extends Div {
             layout.add(sectionLayout);
             
             Binder<Section> binder = new Binder<>();
-            
-            Button up = new Button(VaadinIcon.ARROW_UP.create());
-            sectionLayout.add(up);
-            
-            Button down = new Button(VaadinIcon.ARROW_DOWN.create());
-            sectionLayout.add(down);
 
             TextField nameField = new TextField("Name");
             sectionLayout.add(nameField);            
@@ -54,21 +48,7 @@ public class AddonView extends Div {
             
             NoUiField<Integer> orderField = new NoUiField<Integer>();
             binder.forField(orderField).bind(Section::getOrder, Section::setOrder);
-            
-            up.addClickListener(click -> {
-                int index = layout.indexOf(sectionLayout);
-                if(index > 0) {
-                    Component swap = layout.getComponentAt(index-1);
-                    layout.remove(sectionLayout);
-                    layout.addComponentAtIndex(index, sectionLayout);
-                }
-            });
-            
-            Button save = new Button("Save");
-            save.setDisableOnClick(true);
-            
-            
-            
+           
             binder.readBean(section);
         }
         
